@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "author": "Toto",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 16.2,
+      "left": -65.8,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 148.8,
+      "left": -154.15,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -236.57, "left": 217.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 219.5, "left": -547.4, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 235.2,
+      "left": -154.15,
+      "rotate": 90,
+      "attrs": { "value": "20" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:VSS", "uno:GND.1", "green", [ "v38.4", "h230.4", "v134.4" ] ],
+    [ "lcd1:VDD", "uno:5V", "green", [ "v28.8", "h-326.3", "v192" ] ],
+    [ "lcd1:RS", "uno:12", "green", [ "v0" ] ],
+    [ "lcd1:RW", "uno:GND.1", "green", [ "v0" ] ],
+    [ "lcd1:E", "uno:11", "green", [ "v0" ] ],
+    [ "lcd1:D4", "uno:10", "green", [ "v0" ] ],
+    [ "lcd1:D5", "uno:9", "green", [ "v0" ] ],
+    [ "lcd1:D6", "uno:8", "green", [ "v0" ] ],
+    [ "lcd1:D7", "uno:7", "green", [ "v0" ] ],
+    [ "lcd1:A", "uno:5V", "green", [ "v48", "h-422.5", "v76.8" ] ],
+    [ "lcd1:K", "uno:GND.1", "green", [ "v0" ] ],
+    [ "r1:2", "r2:1", "green", [ "h0" ] ],
+    [ "r2:2", "uno:GND.3", "green", [ "h0", "v46.8", "h57.6", "v-182.4" ] ],
+    [ "uno:A0", "r1:2", "green", [ "h-67.1", "v3.8" ] ],
+    [ "uno:5V", "r1:1", "red", [ "h-57.5", "v-25", "h-48" ] ]
+  ],
+  "dependencies": {}
+}
